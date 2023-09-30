@@ -1,0 +1,41 @@
+.swiper-container {
+  width: 100vw;
+  height: 100dvh;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: black;
+  overscroll-behavior-y: contain;
+
+  &__previous,
+  &__current,
+  &__next {
+    height: 100dvh;
+  }
+
+  &__previous,
+  &__next{
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &__previous {
+    bottom: 100%;
+  }
+
+  &__next {
+    bottom: -100%;
+  }
+}
+
+.video-container{
+  height: 100vh;
+  max-height: 100vh;
+  background-color: black;
+  overflow: hidden;
+
+  &__video {
+    width: 100%;
+  }
+}

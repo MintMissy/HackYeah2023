@@ -1,0 +1,29 @@
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-item {
+  border: none;
+  background: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: .6rem;
+  font-weight: 400;
+  height: 100%;
+  padding: .5rem;
+
+  & > &__icon {
+    font-size: 1.75rem;
+    width: 4rem;
+    height: 2rem;
+  }
+}
