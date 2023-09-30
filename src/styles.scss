@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+video {
+  max-width: 100%;
+}
 
 .positive-attidute {
   --filter: brightness(0) saturate(100%) invert(77%) sepia(15%) saturate(1551%) hue-rotate(44deg) brightness(90%) contrast(89%);;

@@ -1,0 +1,16 @@
+<div class="swiper-container">
+	<div [style.translate]="'0 ' + translateYMove + 'vh'" [style.transition]="touchStart === 0 ? 'translate .2s' : ''">
+		<!--  AUTOPLAY-->
+		<ng-container *ngFor="let video of elements; let i = index; trackBy: trackById">
+			<div
+				[class.swiper-container__previous]="index - 1 === i"
+				[class.swiper-container__current]="index === i"
+				[class.swiper-container__next]="index + 1 === i"
+				*ngIf="i >= index - 1 && i <= index + 1"
+				class="video-container"
+			>
+				<video class="video-container__video" [src]="video.src"></video>
+			</div>
+		</ng-container>
+	</div>
+</div>
