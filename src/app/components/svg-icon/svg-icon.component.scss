@@ -1,5 +1,5 @@
-.icon {
-  filter: invert(0.5);
-  width: 24px;
-  height: 24px;
+:host .icon {
+	filter: var(--filter);
+	width: 24px;
+	height: 24px;
 }

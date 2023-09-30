@@ -1,14 +1,8 @@
-.container {
-  margin: 2rem;
-  border: 1px solid black;
-  border-radius: 20px;
-  max-width: 500px;
-  height: 800px;
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .tabs {
   width: 90%;

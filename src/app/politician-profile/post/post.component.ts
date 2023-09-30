@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PostInterface } from '../../models/post.interface';
 import { MatIconModule } from '@angular/material/icon';
-import {IconRatingComponent} from "../../components/icon-rating/icon-rating.component";
+import { IconRatingComponent } from '../../components/icon-rating/icon-rating.component';
 
 @Component({
 	selector: 'app-post',
@@ -14,4 +14,9 @@ import {IconRatingComponent} from "../../components/icon-rating/icon-rating.comp
 })
 export class PostComponent {
 	@Input({ required: true }) data!: PostInterface;
+	@Output() updatedPost = new EventEmitter<PostInterface>();
+	handleRating(value: string) {
+		console.log(this.data.id);
+		this.updatedPost.emit();
+	}
 }

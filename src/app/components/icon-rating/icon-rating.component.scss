@@ -1,4 +1,9 @@
 .icons {
-  display: flex;
-  gap: 0.5rem;
+	display: flex;
+	gap: 0.5rem;
+}
+
+app-svg-icon:hover {
+	opacity: 0.5;
+	cursor: pointer;
 }

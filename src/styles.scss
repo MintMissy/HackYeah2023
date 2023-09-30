@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.positive-attidute {
+  --filter: brightness(0) saturate(100%) invert(77%) sepia(15%) saturate(1551%) hue-rotate(44deg) brightness(90%) contrast(89%);;
+}
+
+.neutral-attidute {
+  --filter: invert(0.5)
+}
+
+.negative-attidute {
+  filter: brightness(0) saturate(100%) invert(25%) sepia(31%) saturate(2221%) hue-rotate(323deg) brightness(116%) contrast(123%);;
+}
