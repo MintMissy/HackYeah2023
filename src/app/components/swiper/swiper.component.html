@@ -1,6 +1,5 @@
 <div class="swiper-container">
 	<div [style.translate]="'0 ' + translateYMove + 'vh'" [style.transition]="touchStart === 0 ? 'translate .2s' : ''">
-		<!--  AUTOPLAY-->
 		<ng-container *ngFor="let video of elements; let i = index; trackBy: trackById">
 			<div
 				[class.swiper-container__previous]="index - 1 === i"
@@ -9,7 +8,13 @@
 				*ngIf="i >= index - 1 && i <= index + 1"
 				class="video-container"
 			>
-				<video class="video-container__video" [src]="video.src"></video>
+				<video
+					class="video-container__video"
+					app-swiper-video
+					autoplay
+					[videoSrc]="video.src"
+					[src]="video.src"
+				></video>
 			</div>
 		</ng-container>
 	</div>

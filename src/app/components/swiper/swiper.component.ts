@@ -1,21 +1,48 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import {
+	Component,
+	Directive,
+	ElementRef,
+	EventEmitter,
+	HostListener,
+	inject,
+	Input,
+	Output,
+	ViewChildren,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+@Directive({
+	selector: '[app-swiper-video]',
+	standalone: true,
+})
+export class SwiperVideoDirective {
+	@Input() videoSrc = '';
+	video = inject(ElementRef<HTMLVideoElement>);
+
+	play() {
+		this.video.nativeElement.play();
+	}
+
+	pause() {
+		this.video.nativeElement.pause();
+	}
+}
 
 @Component({
 	selector: 'app-swiper',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, SwiperVideoDirective],
 	templateUrl: './swiper.component.html',
 	styleUrls: ['./swiper.component.scss'],
 })
 export class SwiperComponent {
 	@Input() elements: { id: number; src: string }[] = [];
-	trackById = (item: any) => item.id;
-
 	@Output() loadMoreData = new EventEmitter<void>();
+	@ViewChildren(SwiperVideoDirective) videos!: SwiperVideoDirective[];
 
 	index = 0;
 	touchStart = 0;
+	trackById = (item: any) => item.id;
 
 	private _translateYMove = 0;
 	get translateYMove(): number {
@@ -46,6 +73,7 @@ export class SwiperComponent {
 	swipePrevious() {
 		if (!this.previousElement) return;
 		this.index--;
+		this.updateVideosPlayState();
 	}
 
 	swipeNext() {
@@ -55,6 +83,7 @@ export class SwiperComponent {
 		if (!this.nextElement) {
 			this.loadMoreData.emit();
 		}
+		this.updateVideosPlayState();
 	}
 
 	@HostListener('touchstart', ['$event'])
@@ -92,5 +121,17 @@ export class SwiperComponent {
 			}, 200);
 			this._translateYMove = 100;
 		}
+	}
+
+	updateVideosPlayState() {
+		const { src } = this.elements[this.index];
+
+		this.videos.forEach((video) => {
+			if (video.videoSrc === src) {
+				video.play();
+			} else {
+				video.pause();
+			}
+		});
 	}
 }
