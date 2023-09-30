@@ -1,44 +1,18 @@
-import {
-	Component,
-	Directive,
-	ElementRef,
-	EventEmitter,
-	HostListener,
-	inject,
-	Input,
-	Output,
-	ViewChildren,
-} from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-@Directive({
-	selector: '[app-swiper-video]',
-	standalone: true,
-})
-export class SwiperVideoDirective {
-	@Input() videoSrc = '';
-	video = inject(ElementRef<HTMLVideoElement>);
-
-	play() {
-		this.video.nativeElement.play();
-	}
-
-	pause() {
-		this.video.nativeElement.pause();
-	}
-}
+import { SwiperVideoComponent } from './swiper-video/swiper-video.component';
 
 @Component({
 	selector: 'app-swiper',
 	standalone: true,
-	imports: [CommonModule, SwiperVideoDirective],
+	imports: [CommonModule, SwiperVideoComponent],
 	templateUrl: './swiper.component.html',
 	styleUrls: ['./swiper.component.scss'],
 })
 export class SwiperComponent {
 	@Input() elements: { id: number; src: string }[] = [];
 	@Output() loadMoreData = new EventEmitter<void>();
-	@ViewChildren(SwiperVideoDirective) videos!: SwiperVideoDirective[];
+	@ViewChildren(SwiperVideoComponent) videos!: SwiperVideoComponent[];
 
 	index = 0;
 	touchStart = 0;

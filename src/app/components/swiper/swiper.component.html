@@ -8,13 +8,7 @@
 				*ngIf="i >= index - 1 && i <= index + 1"
 				class="video-container"
 			>
-				<video
-					class="video-container__video"
-					app-swiper-video
-					autoplay
-					[videoSrc]="video.src"
-					[src]="video.src"
-				></video>
+				<app-swiper-video [videoSrc]="video.src"></app-swiper-video>
 			</div>
 		</ng-container>
 	</div>
