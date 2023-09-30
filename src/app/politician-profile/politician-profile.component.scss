@@ -1,0 +1,29 @@
+.container {
+  margin: 2rem;
+  border: 1px solid black;
+  border-radius: 20px;
+  max-width: 500px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.tabs {
+  width: 90%;
+}
+
+button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.posts {
+  margin-top: 0.5rem
+}
+
+:host::ng-deep .mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}

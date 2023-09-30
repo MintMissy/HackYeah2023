@@ -1,0 +1,10 @@
+<div class="profile">
+	<img class="profile__avatar" [src]="avatar" />
+	<div class="profile__data">
+		<span class="profile__data-name">{{ politicianData.firstName }} {{ politicianData.lastName }}</span>
+		<span>{{ politicianData.party }}</span>
+		<mat-chip-listbox>
+			<mat-chip-option>{{politicianData.label}}</mat-chip-option>
+		</mat-chip-listbox>
+	</div>
+</div>
