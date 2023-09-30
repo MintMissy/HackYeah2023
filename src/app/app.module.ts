@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
 import { SwiperComponent } from './components/swiper/swiper.component';
+import { IconComponent } from './components/icon/icon.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -23,6 +25,7 @@ import { SwiperComponent } from './components/swiper/swiper.component';
 		MatButtonModule,
 		MatRippleModule,
 		SwiperComponent,
+		IconComponent,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
