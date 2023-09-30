@@ -1,0 +1,21 @@
+.profile {
+	display: flex;
+  margin-top: 2rem;
+	&__avatar {
+		width: 100px;
+		height: 100px;
+		border-radius: 50% 50%;
+	}
+
+	&__data {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+
+		&-name {
+      font-weight: bolder;
+      font-size: large;
+      line-height: 2rem;
+		}
+	}
+}
