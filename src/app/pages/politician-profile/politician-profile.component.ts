@@ -8,6 +8,7 @@ import { PostComponent } from './post/post.component';
 import { PoliticianProfilePresenter } from './politician-profile.presenter';
 import { VotingMarkersComponent } from '../../components/voting-markers/voting-markers.component';
 import { Attidute, PostInterface } from '../../models/post.interface';
+import {VideoListComponent} from "../../components/video-list/video-list.component";
 
 @Component({
 	selector: 'app-politician-profile',
@@ -20,6 +21,7 @@ import { Attidute, PostInterface } from '../../models/post.interface';
 		MatIconModule,
 		PostComponent,
 		VotingMarkersComponent,
+		VideoListComponent,
 	],
 	templateUrl: './politician-profile.component.html',
 	providers: [],

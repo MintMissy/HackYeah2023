@@ -1,0 +1,41 @@
+.video-container {
+  position: relative;
+  max-height: 187px;
+  overflow: hidden;
+  background-color: black;
+
+  &__video {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__stats {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding: 4rem .75rem .75rem;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+
+
+    &__icon {
+      color: #FFF;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+    }
+
+    &__views {
+      color: #FFF;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px; /* 160% */
+    }
+  }
+}
