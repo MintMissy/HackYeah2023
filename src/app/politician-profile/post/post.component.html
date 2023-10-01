@@ -7,6 +7,6 @@
 	</mat-expansion-panel-header>
 	<div class="post__content">
 		<span> {{ data.description }} </span>
-		<app-icon-rating (clickedOption)="handleRating($event)" [attidute]="data.attidute"></app-icon-rating>
+		<app-icon-rating direction="horizontal" class="rating" (clickedOption)="handleRating($event)" [attidute]="data.attidute"></app-icon-rating>
 	</div>
 </mat-expansion-panel>
