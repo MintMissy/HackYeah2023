@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PoliticianProfilePresenter } from './politician-profile/politician-profile.presenter';
-import { PoliticianProfileService } from './politician-profile/politician-profile.service';
+import { PoliticianProfilePresenter } from './pages/politician-profile/politician-profile.presenter';
+import { PoliticianProfileService } from './pages/politician-profile/politician-profile.service';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 	{
-		path: 'prof' + 'ile/:id',
+		path: 'profile/politician/:id',
 		loadComponent: () =>
-			import('./politician-profile/politician-profile.component').then((mod) => mod.PoliticianProfileComponent),
+			import('./pages/politician-profile/politician-profile.component').then((mod) => mod.PoliticianProfileComponent),
 		providers: [PoliticianProfileService, PoliticianProfilePresenter],
 	},
+	{
+    path: 'profile/user/:id', loadComponent: () => import('./pages/user-profile/user-profile.component').then((mod) => mod.UserProfileComponent)
+  },
 	{
 		path: 'sign-in',
 		loadComponent: () => import('./pages/sign-in/sign-in.component').then((m) => m.SignInComponent),

@@ -8,8 +8,7 @@ import { AttiduteIcon } from '../../models/post.interface';
 	imports: [],
 	templateUrl: './svg-icon.component.html',
 	styleUrls: ['./svg-icon.component.scss'],
-	hostDirectives: [{ directive: SvgColorDirective, inputs: ['attidute'] }],
-	changeDetection: ChangeDetectionStrategy.OnPush,
+	hostDirectives: [{ directive: SvgColorDirective, inputs: ['attitude'] }],
 })
 export class SvgIconComponent {
 	@Input({ required: true }) iconName!: string;

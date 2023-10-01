@@ -21,15 +21,11 @@ import { Attidute, AttiduteIcon } from '../../models/post.interface';
 	templateUrl: './icon-rating.component.html',
 	styleUrls: ['./icon-rating.component.scss'],
 })
-export class IconRatingComponent implements AfterViewInit {
-	// @Input() @HostBinding('class.flex-direction') direction: 'horizontal' | 'vertical' = 'vertical';
+export class IconRatingComponent {
 	@ViewChild('icons', { static: false }) ratingIcons!: ElementRef;
 
 	@Input({ required: true }) set direction(value: 'horizontal' | 'vertical') {
-    setTimeout(() => {
-      const nativeElement = this.ratingIcons.nativeElement;
-      this.renderer.setStyle(nativeElement, 'flex-direction', value);
-    }, 100)
+
 	}
 	@Input() set attidute(state: AttiduteIcon) {
 		if (state == 'positive') {
@@ -61,9 +57,5 @@ export class IconRatingComponent implements AfterViewInit {
 		this.clickedOption.emit(value);
 	}
 
-	ngAfterViewInit() {
-		const nativeElement = this.ratingIcons.nativeElement;
-	}
-
-	constructor(private renderer: Renderer2) {}
+	constructor() {}
 }

@@ -1,0 +1,12 @@
+{
+  "/api": {
+    "target": "http://ec2-3-70-132-167.eu-central-1.compute.amazonaws.com:8080/api/v1",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "logLevel": "debug"
+  },
+}
+

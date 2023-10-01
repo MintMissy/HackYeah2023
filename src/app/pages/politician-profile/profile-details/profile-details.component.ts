@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { PoliticianDataInterface } from '../../models/politician-data.interface';
+import { PoliticianDataInterface } from '../../../models/politician-data.interface';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 

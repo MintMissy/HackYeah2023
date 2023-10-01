@@ -9,6 +9,8 @@ export class UserService {
   http = inject(HttpClient)
   apiUrl = `${environment.apiUrl}/`
 
+  tempUserId = 1;
+
   getUser() {
     return this.http.get('')
   }

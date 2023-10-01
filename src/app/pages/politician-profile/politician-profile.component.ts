@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { PostComponent } from './post/post.component';
 import { PoliticianProfilePresenter } from './politician-profile.presenter';
-import { Attidute, PostInterface } from '../models/post.interface';
+import { Attidute, PostInterface } from '../../models/post.interface';
 
 @Component({
 	selector: 'app-politician-profile',
@@ -24,7 +24,8 @@ export class PoliticianProfileComponent implements OnInit {
 	constructor(private politicianProfilePresenter: PoliticianProfilePresenter) {}
 
 	handleReactionUpdate(value: PostInterface) {
-		this.politicianProfilePresenter.updatePosts(this.tempUserId, value.id, value.attidute as Attidute);
+    console.log(value)
+		this.politicianProfilePresenter.updatePosts(this.tempUserId, value.postId, value.attitude as Attidute);
 	}
 
 	ngOnInit() {

@@ -6,7 +6,7 @@ import { Attidute, AttiduteIcon } from '../models/post.interface';
 	standalone: true,
 })
 export class SvgColorDirective {
-	@Input() set attidute(attidute: AttiduteIcon) {
+	@Input() set attitude(attidute: AttiduteIcon) {
 		this.color = `${attidute}-attidute`;
 	}
 
