@@ -1,31 +1,35 @@
 <div class="profile">
-	<div>
+	<div style="min-width: 100%">
 		<app-profile-details></app-profile-details>
-		<button mat-raised-button color="primary">Follow</button>
 	</div>
 
 	<mat-tab-group class="tabs">
 		<mat-tab>
 			<ng-template mat-tab-label>
-				<mat-icon class="example-tab-icon">thumb_up</mat-icon>
+				<mat-icon>
+					<img src="assets/icons/table.svg" />
+				</mat-icon>
 			</ng-template>
 
 			<div class="posts" *ngFor="let post of posts | async">
-				<app-post (updatedPost)="handleReactionUpdate($event)" [data]="post"></app-post>
+				<app-post class="tab-icon" (updatedPost)="handleReactionUpdate($event)" [data]="post"></app-post>
 			</div>
 		</mat-tab>
 
 		<mat-tab>
 			<ng-template mat-tab-label>
-				<mat-icon class="example-tab-icon">thumb_up</mat-icon>
+				<mat-icon>
+					<img class="tab-icon" src="assets/icons/slider.svg" />
+				</mat-icon>
 			</ng-template>
 			Content 2
 		</mat-tab>
 
 		<mat-tab>
 			<ng-template mat-tab-label>
-				<mat-icon class="example-tab-icon">thumb_up</mat-icon>
-			</ng-template>
+				<mat-icon>
+					<img class="tab-icon" src="assets/icons/photo-video.svg" /> </mat-icon
+			></ng-template>
 
 			Content 3
 		</mat-tab>

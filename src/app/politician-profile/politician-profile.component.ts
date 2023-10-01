@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileDetailsComponent } from './profile-details/profile-details.component';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatIconModule } from '@angular/material/icon';
 import { PostComponent } from './post/post.component';
 import { PoliticianProfilePresenter } from './politician-profile.presenter';
-import { PostInterface } from '../models/post.interface';
+import { Attidute, PostInterface } from '../models/post.interface';
 
 @Component({
 	selector: 'app-politician-profile',
@@ -16,12 +16,18 @@ import { PostInterface } from '../models/post.interface';
 	providers: [],
 	styleUrls: ['./politician-profile.component.scss'],
 })
-export class PoliticianProfileComponent {
-	constructor(private politicianProfilePresenter: PoliticianProfilePresenter) {}
-
+export class PoliticianProfileComponent implements OnInit {
+	tempUserId: string = '1';
+	tempPoliticianId: string = '1';
 	posts = this.politicianProfilePresenter.posts;
 
+	constructor(private politicianProfilePresenter: PoliticianProfilePresenter) {}
+
 	handleReactionUpdate(value: PostInterface) {
-		// updat
+		this.politicianProfilePresenter.updatePosts(this.tempUserId, value.id, value.attidute as Attidute);
+	}
+
+	ngOnInit() {
+		this.politicianProfilePresenter.getPoliticianPosts(this.tempPoliticianId, this.tempUserId);
 	}
 }

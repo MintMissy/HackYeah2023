@@ -1,10 +1,25 @@
-<div class="profile">
-	<img class="profile__avatar" [src]="avatar" />
-	<div class="profile__data">
-		<span class="profile__data-name">{{ politicianData.firstName }} {{ politicianData.lastName }}</span>
-		<span>{{ politicianData.party }}</span>
+<div class="container">
+	<div class="background"></div>
+	<div class="profile">
+		<img class="profile__avatar" [src]="avatar" />
+		<div class="profile__data">
+			<span class="profile__data-name">{{ politicianData.firstName }} {{ politicianData.lastName }}</span>
+		</div>
+	</div>
+	<div class="description-box">
+		<p class="description">{{ politicianData.description }}</p>
 		<mat-chip-listbox>
-			<mat-chip-option>{{politicianData.label}}</mat-chip-option>
+			<mat-chip>{{ politicianData.party }}</mat-chip>
+			<mat-chip>{{ politicianData.label }}</mat-chip>
 		</mat-chip-listbox>
+		<div class="buttons">
+			<button class="btn" mat-raised-button color="primary">
+				<div class="btn-content">
+					<span>Follow</span>
+					<img class="follow-icon" src="assets/icons/add-user.svg" />
+				</div>
+			</button>
+			<button class="btn-more">...</button>
+		</div>
 	</div>
 </div>

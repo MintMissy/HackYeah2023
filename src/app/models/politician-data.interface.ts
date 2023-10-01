@@ -4,4 +4,5 @@ export interface PoliticianDataInterface {
   lastName: string;
   party?: string;
   label?: string;
+  description: string;
 }

@@ -45,3 +45,12 @@ a, a:visited{
 .negative-attidute {
   filter: brightness(0) saturate(100%) invert(25%) sepia(31%) saturate(2221%) hue-rotate(323deg) brightness(116%) contrast(123%);;
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/inter.ttf');
+}
+
+* {
+  font-family: 'Inter';
+}

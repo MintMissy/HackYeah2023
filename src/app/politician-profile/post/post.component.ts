@@ -15,8 +15,7 @@ import { IconRatingComponent } from '../../components/icon-rating/icon-rating.co
 export class PostComponent {
 	@Input({ required: true }) data!: PostInterface;
 	@Output() updatedPost = new EventEmitter<PostInterface>();
-	handleRating(value: string) {
-		console.log(this.data.id);
-		this.updatedPost.emit();
+	handleRating(value: any) {
+		this.updatedPost.emit({...this.data, attidute: value});
 	}
 }

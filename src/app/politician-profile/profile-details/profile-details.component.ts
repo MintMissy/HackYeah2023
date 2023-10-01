@@ -18,7 +18,8 @@ export class ProfileDetailsComponent {
 		id: 1,
 		firstName: 'Magdalena',
 		lastName: 'Maj',
-		party: 'Koalicja Obywatelska',
-		label: 'Wybory samorządowe 2023',
+		party: 'Democrats',
+		label: '#Election 2023',
+    description: 'Let\'s build a brighter future together! 🇺🇸 #DemocratForChange #ProgressiveValues'
 	};
 }
