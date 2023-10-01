@@ -1,6 +1,6 @@
 .profile {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 4.5rem;
 
   &__avatar {
     width: 100px;
@@ -58,13 +58,14 @@
 }
 
 .background {
-  height: 85px;
-  background-image: url("../../../assets/images/beach.jpg");
+  height: 125px;
+  background-image: url("../../../../assets/images/beach.jpg");
   position: absolute;
   right: -50px;
   z-index: -999;
   left: -50px;
   background-size: cover;
+  background-position: center;
 }
 
 .buttons {
