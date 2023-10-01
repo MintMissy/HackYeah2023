@@ -1,6 +1,8 @@
 .profile {
   display: flex;
   margin-top: 4.5rem;
+  z-index: 10;
+  position: relative;
 
   &__avatar {
     width: 100px;
@@ -27,6 +29,9 @@
 .description {
   max-width: 300px;
   margin-left: 10px;
+
+  z-index: 10;
+  position: relative;
 }
 
 .container {
@@ -62,7 +67,6 @@
   background-image: url("../../../../assets/images/beach.jpg");
   position: absolute;
   right: -50px;
-  z-index: -999;
   left: -50px;
   background-size: cover;
   background-position: center;
