@@ -1,1 +1,32 @@
-<app-politician-widget state="follow"></app-politician-widget>
+<div class="profile">
+	<div style="min-width: 100%">
+		<app-profile-details></app-profile-details>
+	</div>
+
+	<mat-tab-group class="tabs">
+		<mat-tab>
+			<ng-template mat-tab-label>
+				<mat-icon> <app-icon icon="users" class="tab-icon"></app-icon> </mat-icon>
+			</ng-template>
+			<app-politician-widget></app-politician-widget>
+		</mat-tab>
+
+		<mat-tab>
+			<ng-template mat-tab-label>
+				<mat-icon>
+					<img class="tab-icon" src="../../../assets/icons/slider.svg" />
+				</mat-icon>
+			</ng-template>
+			<div class="voting-markers">
+				<app-voting-markers></app-voting-markers>
+			</div>
+		</mat-tab>
+
+		<mat-tab>
+			<ng-template mat-tab-label>
+				<mat-icon> <app-icon icon="bookmark" class="tab-icon"></app-icon> </mat-icon
+			></ng-template>
+			<app-video-list></app-video-list>
+		</mat-tab>
+	</mat-tab-group>
+</div>
