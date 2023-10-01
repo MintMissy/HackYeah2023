@@ -7,11 +7,20 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { PostComponent } from './post/post.component';
 import { PoliticianProfilePresenter } from './politician-profile.presenter';
 import { Attidute, PostInterface } from '../models/post.interface';
+import {VotingMarkersComponent} from "../components/voting-markers/voting-markers.component";
 
 @Component({
 	selector: 'app-politician-profile',
 	standalone: true,
-	imports: [CommonModule, ProfileDetailsComponent, MatButtonModule, MatTabsModule, MatIconModule, PostComponent],
+	imports: [
+		CommonModule,
+		ProfileDetailsComponent,
+		MatButtonModule,
+		MatTabsModule,
+		MatIconModule,
+		PostComponent,
+		VotingMarkersComponent,
+	],
 	templateUrl: './politician-profile.component.html',
 	providers: [],
 	styleUrls: ['./politician-profile.component.scss'],

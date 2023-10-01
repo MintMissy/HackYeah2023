@@ -1,0 +1,24 @@
+<h2 class="title">{{ title }}</h2>
+<div class="container">
+	<app-icon
+		*ngIf="leftIconType === 'fa'"
+		[icon]="leftIcon"
+		[class.marker-icon--highlighted]="primaryValue < 50"
+		class="marker-icon"
+	/>
+	<img *ngIf="leftIconType === 'svg'" [src]="primaryValue <= 50 ? leftIcon : leftIconActive" class="marker-icon" />
+	<div class="marker-line">
+		<div class="marker-line__base-line"></div>
+		<div class="marker-line__primary-point point" [style.left]="primaryValue + '%'"></div>
+		<div
+			class="marker-line__primary-line"
+			[ngStyle]="{
+				left: (primaryValue > 50 ? primaryValue : 0) + '%',
+				right: (primaryValue < 50 ? 100 - primaryValue : 0) + '%'
+			}"
+			*ngIf="primaryValue !== 50"
+		></div>
+		<div class="marker-line__compare-point point" *ngIf="compareValue !== -1" [style.left]="compareValue + '%'"></div>
+	</div>
+	<app-icon [icon]="rightIcon" class="marker-icon" [class.marker-icon--highlighted]="primaryValue > 50" />
+</div>
