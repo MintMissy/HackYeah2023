@@ -1,4 +1,16 @@
-import { Component, EventEmitter, HostListener, Input, Output, ViewChildren } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	HostListener,
+	inject,
+	Input,
+	OnDestroy,
+	OnInit,
+	Output,
+	Renderer2,
+	ViewChild,
+	ViewChildren,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SwiperVideoComponent } from './swiper-video/swiper-video.component';
 
@@ -9,11 +21,12 @@ import { SwiperVideoComponent } from './swiper-video/swiper-video.component';
 	templateUrl: './swiper.component.html',
 	styleUrls: ['./swiper.component.scss'],
 })
-export class SwiperComponent {
+export class SwiperComponent implements OnInit, OnDestroy {
 	@Input() elements: { id: number; src: string }[] = [];
 	@Output() loadMoreData = new EventEmitter<void>();
 	@ViewChildren(SwiperVideoComponent) videos!: SwiperVideoComponent[];
 
+	renderer = inject(Renderer2);
 	index = 0;
 	touchStart = 0;
 	trackById = (item: any) => item.id;
@@ -42,6 +55,20 @@ export class SwiperComponent {
 
 	get nextElement() {
 		return this.index >= this.elements.length ? undefined : this.elements[this.index + 1];
+	}
+
+	ngOnInit(): void {
+		this.renderer.setStyle(document.body, 'max-height', '100vh');
+		this.renderer.setStyle(document.body, 'overflow', 'hidden');
+		this.renderer.setStyle(document.getElementsByClassName('phone-container__screen')[0], 'max-height', '100vh');
+		this.renderer.setStyle(document.getElementsByClassName('phone-container__screen')[0], 'overflow', 'hidden');
+	}
+
+	ngOnDestroy(): void {
+		this.renderer.removeStyle(document.body, 'max-height');
+		this.renderer.removeStyle(document.body, 'overflow');
+		this.renderer.removeStyle(document.getElementsByClassName('phone-container__screen')[0], 'max-height');
+		this.renderer.removeStyle(document.getElementsByClassName('phone-container__screen')[0], 'overflow');
 	}
 
 	swipePrevious() {

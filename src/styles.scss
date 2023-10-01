@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
 }
@@ -7,10 +11,27 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  position: relative;
+
+  @media (min-width: 768px) {
+    overflow: scroll !important;
+  }
 }
 
 video {
   max-width: 100%;
+}
+
+.fa {
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+a, a:visited{
+  color: inherit;
 }
 
 .positive-attidute {

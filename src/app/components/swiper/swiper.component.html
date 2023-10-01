@@ -1,15 +1,17 @@
-<div class="swiper-container">
-	<div [style.translate]="'0 ' + translateYMove + 'vh'" [style.transition]="touchStart === 0 ? 'translate .2s' : ''">
-		<ng-container *ngFor="let video of elements; let i = index; trackBy: trackById">
-			<div
-				[class.swiper-container__previous]="index - 1 === i"
-				[class.swiper-container__current]="index === i"
-				[class.swiper-container__next]="index + 1 === i"
-				*ngIf="i >= index - 1 && i <= index + 1"
-				class="video-container"
-			>
-				<app-swiper-video [videoSrc]="video.src"></app-swiper-video>
-			</div>
-		</ng-container>
-	</div>
+<div
+	class="swiper-container"
+	[style.translate]="'0 ' + translateYMove + 'vh'"
+	[style.transition]="touchStart === 0 ? 'translate .2s' : ''"
+>
+	<ng-container *ngFor="let video of elements; let i = index; trackBy: trackById">
+		<div
+			[class.swiper-container__previous]="index - 1 === i"
+			[class.swiper-container__current]="index === i"
+			[class.swiper-container__next]="index + 1 === i"
+			*ngIf="i >= index - 1 && i <= index + 1"
+			class="video-container"
+		>
+			<app-swiper-video [videoSrc]="video.src"></app-swiper-video>
+		</div>
+	</ng-container>
 </div>

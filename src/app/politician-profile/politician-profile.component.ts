@@ -1,13 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ProfileDetailsComponent} from "./profile-details/profile-details.component";
-import {MatButtonModule} from "@angular/material/button";
-import {MatTabsModule} from "@angular/material/tabs";
-import {MatIconModule} from "@angular/material/icon";
-import {PostComponent} from "./post/post.component";
-import {PoliticianProfilePresenter} from "./politician-profile.presenter";
-import {Attidute, PostInterface} from "../models/post.interface";
-
+import { ProfileDetailsComponent } from './profile-details/profile-details.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+import { PostComponent } from './post/post.component';
+import { PoliticianProfilePresenter } from './politician-profile.presenter';
+import { Attidute, PostInterface } from '../models/post.interface';
 
 @Component({
 	selector: 'app-politician-profile',
@@ -19,15 +18,16 @@ import {Attidute, PostInterface} from "../models/post.interface";
 })
 export class PoliticianProfileComponent implements OnInit {
 	tempUserId: string = '1';
-  tempPoliticianId: string = '1';
-	constructor(private politicianProfilePresenter: PoliticianProfilePresenter) {}
+	tempPoliticianId: string = '1';
 	posts = this.politicianProfilePresenter.posts;
+
+	constructor(private politicianProfilePresenter: PoliticianProfilePresenter) {}
 
 	handleReactionUpdate(value: PostInterface) {
 		this.politicianProfilePresenter.updatePosts(this.tempUserId, value.id, value.attidute as Attidute);
 	}
 
 	ngOnInit() {
-    this.politicianProfilePresenter.getPoliticianPosts(this.tempPoliticianId, this.tempUserId)
-  }
+		this.politicianProfilePresenter.getPoliticianPosts(this.tempPoliticianId, this.tempUserId);
+	}
 }

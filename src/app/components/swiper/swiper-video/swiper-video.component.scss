@@ -1,11 +1,12 @@
 .video-container {
   position: relative;
-  height: 100vh;
+  height: 100%;
 
   &__video {
     position: absolute;
     width: 100%;
     inset: 0;
+    max-width: 100%;
   }
 
   &__data {
@@ -13,7 +14,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
+    height: 275px;
     padding: 64px 24px 24px;
     background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
 
@@ -35,7 +36,7 @@
       margin-bottom: 20px;
     }
 
-    &__tags{
+    &__tags {
       color: var(--neutrals-white, #FFF);
       font-size: 12px;
       font-style: normal;
