@@ -6,12 +6,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { PostComponent } from './post/post.component';
 import { PoliticianProfilePresenter } from './politician-profile.presenter';
+import { VotingMarkersComponent } from '../../components/voting-markers/voting-markers.component';
 import { Attidute, PostInterface } from '../../models/post.interface';
 
 @Component({
 	selector: 'app-politician-profile',
 	standalone: true,
-	imports: [CommonModule, ProfileDetailsComponent, MatButtonModule, MatTabsModule, MatIconModule, PostComponent],
+	imports: [
+		CommonModule,
+		ProfileDetailsComponent,
+		MatButtonModule,
+		MatTabsModule,
+		MatIconModule,
+		PostComponent,
+		VotingMarkersComponent,
+	],
 	templateUrl: './politician-profile.component.html',
 	providers: [],
 	styleUrls: ['./politician-profile.component.scss'],
@@ -24,7 +33,6 @@ export class PoliticianProfileComponent implements OnInit {
 	constructor(private politicianProfilePresenter: PoliticianProfilePresenter) {}
 
 	handleReactionUpdate(value: PostInterface) {
-    console.log(value)
 		this.politicianProfilePresenter.updatePosts(this.tempUserId, value.postId, value.attitude as Attidute);
 	}
 

@@ -58,14 +58,13 @@
 }
 
 .background {
-  height: 100px;
-  background-image: url("../../../../assets/images/beach.jpg");
+  height: 85px;
+  background-image: url("../../../assets/images/beach.jpg");
   position: absolute;
-  width: 100vh;
+  right: -50px;
   z-index: -999;
-  box-sizing: border-box;
-  transform: translateY(-50%);
   left: -50px;
+  background-size: cover;
 }
 
 .buttons {

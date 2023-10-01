@@ -1,0 +1,68 @@
+.marker-icon {
+  display: flex;
+  width: 25px;
+  height: 23px;
+  align-items: center;
+  flex-shrink: 0;
+  color: #828DA9;
+
+  &--highlighted {
+    color: #FF7777;
+  }
+}
+
+.title {
+  translate: 0 4px;
+  text-align: center;
+  margin-bottom: 0;
+  color: var(--neutrals-mineshaft, #18181A);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  translate: 0 -50%;
+  border-radius: 100%;
+  background-color: var(--primary-navy, #001F3F);
+}
+
+.marker-line {
+  position: relative;
+  flex: 1;
+
+  &__base-line,
+  &__primary-line {
+    top: 50%;
+    translate: 0 -50%;
+    position: absolute;
+  }
+
+  &__base-line {
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #828DA9;
+  }
+
+  &__primary-line {
+    height: 2px;
+    background-color: #FF7777;
+  }
+
+  &__primary-point{
+    background-color: #FF7777;
+  }
+}
+
