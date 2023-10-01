@@ -1,6 +1,6 @@
 <div class="profile">
 	<div style="min-width: 100%">
-		<app-profile-details></app-profile-details>
+		<!--		<app-profile-details [politicianData]="userData | async"></app-profile-details>-->
 	</div>
 
 	<mat-tab-group class="tabs">
@@ -8,7 +8,11 @@
 			<ng-template mat-tab-label>
 				<mat-icon> <app-icon icon="users" class="tab-icon"></app-icon> </mat-icon>
 			</ng-template>
-			<app-politician-widget></app-politician-widget>
+			<app-politician-widget
+				*ngFor="let data of politicianData"
+				[politicianData]="data"
+				state="follow"
+			></app-politician-widget>
 		</mat-tab>
 
 		<mat-tab>

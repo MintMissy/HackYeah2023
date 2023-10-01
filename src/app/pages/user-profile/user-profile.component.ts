@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
 	PoliticianWidget,
@@ -37,6 +37,27 @@ export class UserProfileComponent {
 				'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Krzysztof_Kononowicz.JPG/1200px-Krzysztof_Kononowicz.JPG',
 			firstName: 'Jacek',
 			lastName: 'Pato',
+		},
+		{
+			id: '1',
+			avatarSrc:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Krzysztof_Kononowicz.JPG/1200px-Krzysztof_Kononowicz.JPG',
+			firstName: 'Jacek',
+			lastName: 'Pato',
+		},
+		{
+			id: '1',
+			avatarSrc:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Krzysztof_Kononowicz.JPG/1200px-Krzysztof_Kononowicz.JPG',
+			firstName: 'John',
+			lastName: 'Doe',
+		},
+		{
+			id: '1',
+			avatarSrc:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Krzysztof_Kononowicz.JPG/1200px-Krzysztof_Kononowicz.JPG',
+			firstName: 'Mark',
+			lastName: 'Newman',
 		},
 	];
 }

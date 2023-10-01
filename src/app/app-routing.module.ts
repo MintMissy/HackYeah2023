@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PoliticianProfilePresenter } from './pages/politician-profile/politician-profile.presenter';
 import { PoliticianProfileService } from './pages/politician-profile/politician-profile.service';
-import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 	{
@@ -12,8 +11,10 @@ const routes: Routes = [
 		providers: [PoliticianProfileService, PoliticianProfilePresenter],
 	},
 	{
-    path: 'profile/user/:id', loadComponent: () => import('./pages/user-profile/user-profile.component').then((mod) => mod.UserProfileComponent)
-  },
+		path: 'profile/user/:id',
+		loadComponent: () => import('./pages/user-profile/user-profile.component').then((mod) => mod.UserProfileComponent),
+		providers: [PoliticianProfileService, PoliticianProfilePresenter],
+	},
 	{
 		path: 'sign-in',
 		loadComponent: () => import('./pages/sign-in/sign-in.component').then((m) => m.SignInComponent),
