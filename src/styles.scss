@@ -39,7 +39,7 @@ a, a:visited{
 }
 
 .neutral-attidute {
-  --filter: invert(0.5)
+  --filter: brightness(0) saturate(100%) invert(90%) sepia(89%) saturate(3437%) hue-rotate(326deg) brightness(103%) contrast(98%);
 }
 
 .negative-attidute {

@@ -27,6 +27,8 @@ export class IconRatingComponent {
 	@Input({ required: true }) set direction(value: 'horizontal' | 'vertical') {
 
 	}
+
+  @Input() votes!: {positiveVotes: number, negativeVotes: number, neutralVotes: number};
 	@Input() set attidute(state: AttiduteIcon) {
 		if (state == 'positive') {
 			this.positiveReaction = true;

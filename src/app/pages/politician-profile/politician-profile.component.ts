@@ -8,6 +8,7 @@ import { PostComponent } from './post/post.component';
 import { PoliticianProfilePresenter } from './politician-profile.presenter';
 import { VotingMarkersComponent } from '../../components/voting-markers/voting-markers.component';
 import { Attidute, PostInterface } from '../../models/post.interface';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
 	selector: 'app-politician-profile',
@@ -29,14 +30,16 @@ export class PoliticianProfileComponent implements OnInit {
 	tempUserId: string = '1';
 	tempPoliticianId: string = '1';
 	posts = this.politicianProfilePresenter.posts;
-
-	constructor(private politicianProfilePresenter: PoliticianProfilePresenter) {}
+  politicianData = this.politicianProfilePresenter.politician;
+	constructor(private politicianProfilePresenter: PoliticianProfilePresenter, private activatedRoute: ActivatedRoute) {}
 
 	handleReactionUpdate(value: PostInterface) {
 		this.politicianProfilePresenter.updatePosts(this.tempUserId, value.postId, value.attitude as Attidute);
 	}
 
 	ngOnInit() {
-		this.politicianProfilePresenter.getPoliticianPosts(this.tempPoliticianId, this.tempUserId);
+    const prodId = this.activatedRoute.snapshot.paramMap.get('id');
+		this.politicianProfilePresenter.getPoliticianPosts(prodId!, this.tempUserId);
+		this.politicianProfilePresenter.getPolitician(this.tempUserId, prodId!);
 	}
 }
