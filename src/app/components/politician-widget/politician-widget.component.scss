@@ -1,0 +1,33 @@
+.item {
+	display: flex;
+	justify-content: space-between;
+  padding: 16px;
+	align-items: center;
+
+	&__data {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+		&-avatar {
+			width: 50px;
+			height: 50px;
+			border-radius: 50% 50%;
+		}
+	}
+
+	&__icon {
+		display: flex;
+	}
+}
+
+.unfollow {
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid black;
+  filter: brightness(0) saturate(100%) invert(12%) sepia(24%) saturate(3963%) hue-rotate(186deg) brightness(92%) contrast(106%);
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
