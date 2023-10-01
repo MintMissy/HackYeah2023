@@ -1,8 +1,9 @@
 <div class="phone-container">
 	<div class="phone-container__screen">
 		<router-outlet></router-outlet>
+
 		<div class="bottom-navigation">
-			<a class="nav-item" routerLink="/test" routerLinkActive="nav-item--active">
+			<a class="nav-item" routerLink="/home" routerLinkActive="nav-item--active">
 				<app-icon icon="home"></app-icon>
 			</a>
 			<a class="nav-item" routerLink="/profile/2" routerLinkActive="nav-item--active">
@@ -14,5 +15,3 @@
 		</div>
 	</div>
 </div>
-
-<app-swiper [elements]="elements"></app-swiper>
